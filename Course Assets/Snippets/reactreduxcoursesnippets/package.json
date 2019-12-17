@@ -1,0 +1,29 @@
+{
+    "name": "reactreduxcoursesnippets",
+    "displayName": "React Redux Firestore Course Snippets",
+    "description": "Snippets for use with React Redux Firestore course",
+    "version": "0.8.0",
+    "publisher": "TCL",
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "css",
+                "path": "./snippets/css.json"
+            }
+        ]
+    }
+}

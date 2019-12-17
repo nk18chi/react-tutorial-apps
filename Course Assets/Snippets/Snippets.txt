@@ -1,0 +1,1316 @@
+=====
+s_css
+=====
+body {
+  background-color: rgb(234, 234, 234) !important;
+}
+
+/*timepicker style*/
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100px;
+}
+
+.react-datepicker__input-container {
+  width: inherit;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+
+/*home page styles*/
+
+.masthead {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+          135deg,
+          rgb(24, 42, 115) 0%,
+          rgb(33, 138, 174) 69%,
+          rgb(32, 167, 172) 89%
+  ) !important;
+  height: 100vh;
+}
+
+/* .masthead.segment {
+  min-height: 700px;
+  padding: 1em 0 !important;
+} */
+
+.masthead .ui.menu .ui.button,
+.ui.menu a.ui.inverted.button {
+  margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+  font-size: 4em;
+  font-weight: normal;
+}
+
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+/* .footer.segment {
+  padding: 5em 0;
+} */
+
+.secondary.inverted.pointing.menu {
+  border: none;
+}
+
+/*end home page styles*/
+
+/* navbar styles */
+
+.ui.menu .item img.logo {
+  margin-right: 1.5em;
+}
+
+.ui.fixed.menu {
+  background-image: linear-gradient(
+          135deg,
+          rgb(24, 42, 115) 0%,
+          rgb(33, 138, 174) 69%,
+          rgb(32, 167, 172) 89%
+  ) !important;
+}
+
+.ui.main.container,
+.main.segment {
+  margin-top: 7em;
+}
+
+.ui.center.aligned.segment.attendance-preview {
+  background-color: #f5f5f5;
+}
+
+.masthead .ui.menu .ui.button,
+.ui.menu a.ui.inverted.button {
+  margin-left: 0.5em;
+}
+
+.ui.menu .item>img:not(.ui) {
+  margin-right: 1.5em !important;
+}
+
+.ui.menu:not(.vertical) .item>.button {
+  margin-left: 0.5em;
+}
+
+/*chat comments*/
+
+.ui.comments .comment .comments {
+  padding-bottom: 0 !important;
+  padding-left: 2em !important;
+}
+
+/* dropzone styles */
+.dropzone {
+  border: dashed 3px #eee;
+  border-radius: 5px;
+  padding-top: 30px;
+  text-align: center;
+  /* min-height: 236px; */
+}
+
+.dropzone--isActive {
+  border: dashed 3px green;
+}
+
+=====
+s_3.4.1
+=====
+     <Segment.Group>
+        <Segment>
+          <Item.Group>
+            <Item>
+              <Item.Image size="tiny" circular src="" />
+              <Item.Content>
+                <Item.Header as="a">Event Title</Item.Header>
+                <Item.Description>
+                  Hosted by <a>hosted by</a>
+                </Item.Description>
+              </Item.Content>
+            </Item>
+          </Item.Group>
+        </Segment>
+        <Segment>
+          <span>
+            <Icon name="clock" /> date |
+            <Icon name="marker" /> time
+          </span>
+        </Segment>
+        <Segment secondary>
+          <List horizontal>
+            {/* todo: attendees go here */}
+          </List>
+        </Segment>
+        <Segment clearing>
+          <Button as="a" color="teal" floated="right" content="View" />
+        </Segment>
+      </Segment.Group>
+
+=====
+s_3.4.2
+=====
+      <Menu inverted fixed="top">
+        <Container>
+          <Menu.Item header>
+            <img src="assets/logo.png" alt="logo" />
+            Re-vents
+          </Menu.Item>
+          <Menu.Item name="Events" />
+          <Menu.Item>
+            <Button floated="right" positive inverted content="Create Event" />
+          </Menu.Item>
+          <Menu.Item position="right">
+            <Button basic inverted content="Login" />
+            <Button basic inverted content="Sign Out" style={{marginLeft: '0.5em'}} />
+          </Menu.Item>
+        </Container>
+      </Menu>
+
+
+=====
+s_3.4.3
+=====
+            <Segment>
+              <Form>
+                <Form.Field>
+                  <label>Event Title</label>
+                  <input placeholder="First Name" />
+                </Form.Field>
+                <Form.Field>
+                  <label>Event Date</label>
+                  <input type="date" placeholder="Event Date" />
+                </Form.Field>
+                <Form.Field>
+                  <label>City</label>
+                  <input placeholder="City event is taking place" />
+                </Form.Field>
+                <Form.Field>
+                  <label>Venue</label>
+                  <input placeholder="Enter the Venue of the event" />
+                </Form.Field>
+                <Form.Field>
+                  <label>Hosted By</label>
+                  <input placeholder="Enter the name of person hosting" />
+                </Form.Field>
+                <Button positive type="submit">
+                  Submit
+                </Button>
+                <Button type="button">Cancel</Button>
+              </Form>
+            </Segment>
+=====
+s_3.7.1
+=====
+const events = [
+  {
+    id: '1',
+    title: 'Trip to Tower of London',
+    date: '2018-03-27T11:00:00+00:00',
+    category: 'culture',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: "Tower of London, St Katharine's & Wapping, London",
+    hostedBy: 'Bob',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+    attendees: [
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+      },
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+      }
+    ]
+  },
+  {
+    id: '2',
+    title: 'Trip to Punch and Judy Pub',
+    date: '2018-03-28T14:00:00+00:00',
+    category: 'drinks',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: 'Punch & Judy, Henrietta Street, London, UK',
+    hostedBy: 'Tom',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+    attendees: [
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+      },
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+      }
+    ]
+  }
+]
+
+=====
+s_6.4.1
+=====
+    <Segment inverted textAlign='center' vertical className='masthead'>
+    <Container text>
+      <Header as='h1' inverted>
+        <Image
+          size='massive'
+          src='/assets/logo.png'
+          alt='logo'
+          style={{ marginBottom: 12 }}
+        />
+        Re-vents
+      </Header>
+      <Button size='huge' inverted>
+        Get started
+        <Icon name='right arrow' inverted />
+      </Button>
+    </Container>
+  </Segment>
+
+=====
+s_6.5.1
+=====
+    <Menu.Item position="right">
+      <Image avatar spaced="right" src='/assets/user.png' />
+      <Dropdown pointing="top left" text="Username">
+        <Dropdown.Menu>
+          <Dropdown.Item text="Create Event" icon="plus" />
+          <Dropdown.Item text="My Events" icon="calendar" />
+          <Dropdown.Item text="My Network" icon="users" />
+          <Dropdown.Item text="My Profile" icon="user" />
+          <Dropdown.Item text="Settings" icon="settings" />
+          <Dropdown.Item text="Sign Out" icon="power" />
+        </Dropdown.Menu>
+      </Dropdown>
+    </Menu.Item>
+=====
+s_6.6.2
+=====
+    <Grid.Column width={4}>
+      <Menu vertical>
+        <Header icon="user" attached inverted color="grey" content="Profile" />
+        <Menu.Item>Basics</Menu.Item>
+        <Menu.Item>About Me</Menu.Item>
+        <Menu.Item>My Photos</Menu.Item>
+      </Menu>
+      <Grid.Row />
+      <Menu vertical>
+        <Header
+          icon="settings"
+          attached
+          inverted
+          color="grey"
+          content="Account"
+        />
+        <Menu.Item>My Account</Menu.Item>
+      </Menu>
+    </Grid.Column>
+=====
+s_8.6.1
+=====
+   <Segment.Group>
+      <Segment basic attached="top" style={{ padding: '0' }}>
+        <Image src="/assets/categoryImages/drinks.jpg" fluid />
+
+        <Segment basic>
+          <Item.Group>
+            <Item>
+              <Item.Content>
+                <Header
+                  size="huge"
+                  content="Event Title"
+                  style={{ color: 'white' }}
+                />
+                <p>Event Date</p>
+                <p>
+                  Hosted by <strong>Hosted by</strong>
+                </p>
+              </Item.Content>
+            </Item>
+          </Item.Group>
+        </Segment>
+      </Segment>
+
+      <Segment attached="bottom">
+        <Button>Cancel My Place</Button>
+        <Button color="teal">JOIN THIS EVENT</Button>
+
+        <Button color="orange" floated="right">
+          Manage Event
+        </Button>
+      </Segment>
+    </Segment.Group>
+=====
+s_8.6.2
+=====
+const eventImageStyle = {
+    filter: 'brightness(30%)'
+};
+
+const eventImageTextStyle = {
+    position: 'absolute',
+    bottom: '5%',
+    left: '5%',
+    width: '100%',
+    height: 'auto',
+    color: 'white'
+};
+=====
+s_8.6.3
+=====
+       <Segment.Group>
+          <Segment attached="top">
+            <Grid>
+              <Grid.Column width={1}>
+                <Icon size="large" color="teal" name="info" />
+              </Grid.Column>
+              <Grid.Column width={15}>
+                <p>Description of Event</p>
+              </Grid.Column>
+            </Grid>
+          </Segment>
+          <Segment attached>
+            <Grid verticalAlign="middle">
+              <Grid.Column width={1}>
+                <Icon name="calendar" size="large" color="teal" />
+              </Grid.Column>
+              <Grid.Column width={15}>
+                <span>Event Date</span>
+              </Grid.Column>
+            </Grid>
+          </Segment>
+          <Segment attached>
+            <Grid verticalAlign="middle">
+              <Grid.Column width={1}>
+                <Icon name="marker" size="large" color="teal" />
+              </Grid.Column>
+              <Grid.Column width={11}>
+                <span>Event Venue</span>
+              </Grid.Column>
+              <Grid.Column width={4}>
+                <Button color="teal" size="tiny" content="Show Map" />
+              </Grid.Column>
+            </Grid>
+          </Segment>
+        </Segment.Group>
+=====
+s_8.6.5
+=====
+<div>
+          <Segment
+            textAlign="center"
+            attached="top"
+            inverted
+            color="teal"
+            style={{ border: 'none' }}
+          >
+            <Header>Chat about this event</Header>
+          </Segment>
+    
+          <Segment attached>
+            <Comment.Group>
+              <Comment>
+                <Comment.Avatar src="/assets/user.png" />
+                <Comment.Content>
+                  <Comment.Author as="a">Matt</Comment.Author>
+                  <Comment.Metadata>
+                    <div>Today at 5:42PM</div>
+                  </Comment.Metadata>
+                  <Comment.Text>How artistic!</Comment.Text>
+                  <Comment.Actions>
+                    <Comment.Action>Reply</Comment.Action>
+                  </Comment.Actions>
+                </Comment.Content>
+              </Comment>
+    
+              <Comment>
+                <Comment.Avatar src="/assets/user.png" />
+                <Comment.Content>
+                  <Comment.Author as="a">Elliot Fu</Comment.Author>
+                  <Comment.Metadata>
+                    <div>Yesterday at 12:30AM</div>
+                  </Comment.Metadata>
+                  <Comment.Text>
+                    <p>
+                      This has been very useful for my research. Thanks as well!
+                    </p>
+                  </Comment.Text>
+                  <Comment.Actions>
+                    <Comment.Action>Reply</Comment.Action>
+                  </Comment.Actions>
+                </Comment.Content>
+                <Comment.Group>
+                  <Comment>
+                    <Comment.Avatar src="/assets/user.png" />
+                    <Comment.Content>
+                      <Comment.Author as="a">Jenny Hess</Comment.Author>
+                      <Comment.Metadata>
+                        <div>Just now</div>
+                      </Comment.Metadata>
+                      <Comment.Text>Elliot you are always so right :)</Comment.Text>
+                      <Comment.Actions>
+                        <Comment.Action>Reply</Comment.Action>
+                      </Comment.Actions>
+                    </Comment.Content>
+                  </Comment>
+                </Comment.Group>
+              </Comment>
+    
+              <Comment>
+                <Comment.Avatar src="/assets/user.png" />
+                <Comment.Content>
+                  <Comment.Author as="a">Joe Henderson</Comment.Author>
+                  <Comment.Metadata>
+                    <div>5 days ago</div>
+                  </Comment.Metadata>
+                  <Comment.Text>Dude, this is awesome. Thanks so much</Comment.Text>
+                  <Comment.Actions>
+                    <Comment.Action>Reply</Comment.Action>
+                  </Comment.Actions>
+                </Comment.Content>
+              </Comment>
+    
+              <Form reply>
+                <Form.TextArea />
+                <Button
+                  content="Add Reply"
+                  labelPosition="left"
+                  icon="edit"
+                  primary
+                />
+              </Form>
+            </Comment.Group>
+          </Segment>
+        </div>
+=====
+s_8.6.4
+=====
+   <div>
+      <Segment
+        textAlign="center"
+        style={{ border: 'none' }}
+        attached="top"
+        secondary
+        inverted
+        color="teal"
+      >
+        2 People Going
+      </Segment>
+      <Segment attached>
+        <List relaxed divided>
+          <Item style={{ position: 'relative' }}>
+            <Label
+              style={{ position: 'absolute' }}
+              color="orange"
+              ribbon="right"
+            >
+              Host
+            </Label>
+            <Item.Image size="tiny" src="/assets/user.png" />
+            <Item.Content verticalAlign="middle">
+              <Item.Header as="h3">
+                <a>Attendee Name</a>
+              </Item.Header>
+            </Item.Content>
+          </Item>
+        </List>
+      </Segment>
+    </div>
+=====
+s_9.3.1
+=====
+const category = [
+    {key: 'drinks', text: 'Drinks', value: 'drinks'},
+    {key: 'culture', text: 'Culture', value: 'culture'},
+    {key: 'film', text: 'Film', value: 'film'},
+    {key: 'food', text: 'Food', value: 'food'},
+    {key: 'music', text: 'Music', value: 'music'},
+    {key: 'travel', text: 'Travel', value: 'travel'},
+];
+=====
+s_10.6.1
+=====
+const initialState = [
+    {
+      id: '1',
+      title: 'Trip to Empire State building',
+      date: '2018-03-21',
+      category: 'culture',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+      city: 'NY, USA',
+      venue: 'Empire State Building, 5th Avenue, New York, NY, USA',
+      venueLatLng: {
+        lat: 40.7484405,
+        lng: -73.98566440000002
+      },
+      hostedBy: 'Bob',
+      hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+      attendees: [
+        {
+          id: 'a',
+          name: 'Bob',
+          photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+        },
+        {
+          id: 'b',
+          name: 'Tom',
+          photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+        }
+      ]
+    },
+    {
+      id: '2',
+      title: 'Trip to Punch and Judy Pub',
+      date: '2018-03-18',
+      category: 'drinks',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+      city: 'London, UK',
+      venue: 'Punch & Judy, Henrietta Street, London, UK',
+      venueLatLng: {
+        lat: 51.5118074,
+        lng: -0.12300089999996544
+      },
+      hostedBy: 'Tom',
+      hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+      attendees: [
+        {
+          id: 'a',
+          name: 'Bob',
+          photoURL: 'https://randomuser.me/api/portraits/men/20.jpg'
+        },
+        {
+          id: 'b',
+          name: 'Tom',
+          photoURL: 'https://randomuser.me/api/portraits/men/22.jpg'
+        }
+      ]
+    }
+  ];
+=====
+s_11.2.1
+=====
+        <Modal closeIcon="close" open={true}>
+          <Modal.Header>Test Modal</Modal.Header>
+          <Modal.Content>
+            <Modal.Description>
+              <p>Test Modal... nothing to see here</p>
+            </Modal.Description>
+          </Modal.Content>
+        </Modal>
+=====
+s_11.3.1
+=====
+import React from 'react';
+import { Form, Segment, Button } from 'semantic-ui-react';
+import { Field } from 'redux-form';
+import TextInput from '../../../app/common/form/TextInput';
+
+const LoginForm = () => {
+  return (
+    <Form error size="large">
+      <Segment>
+        <Field
+          name="email"
+          component={TextInput}
+          type="text"
+          placeholder="Email Address"
+        />
+        <Field
+          name="password"
+          component={TextInput}
+          type="password"
+          placeholder="password"
+        />
+        <Button fluid size="large" color="teal">
+          Login
+        </Button>
+      </Segment>
+    </Form>
+  );
+};
+
+export default LoginForm;
+=====
+s_11.3.2
+=====
+import React from 'react';
+import { Form, Segment, Button } from 'semantic-ui-react';
+import { Field } from 'redux-form';
+import TextInput from 'app/common/form/TextInput';
+
+const RegisterForm = () => {
+  return (
+    <div>
+      <Form size="large">
+        <Segment>
+          <Field
+            name="displayName"
+            type="text"
+            component={TextInput}
+            placeholder="Known As"
+          />
+          <Field
+            name="email"
+            type="text"
+            component={TextInput}
+            placeholder="Email"
+          />
+          <Field
+            name="password"
+            type="password"
+            component={TextInput}
+            placeholder="Password"
+          />
+          <Button fluid size="large" color="teal">
+            Register
+          </Button>
+        </Segment>
+      </Form>
+    </div>
+  );
+};
+
+export default RegisterForm;
+=====
+s_11.3.3
+=====
+import React, {Component} from 'react';
+import {Modal} from 'semantic-ui-react';
+import {connect} from 'react-redux';
+
+import LoginForm from 'features/auth/Login/LoginForm';
+import {closeModal} from "features/modals/modalActions";
+
+const actions = {closeModal};
+
+class LoginModal extends Component {
+    render() {
+        return (
+            <Modal
+                size='mini'
+                open={true}
+                onClose={this.props.closeModal}
+            >
+                <Modal.Header>
+                    Login to Re-vents
+                </Modal.Header>
+                <Modal.Content>
+                    <Modal.Description>
+                        <LoginForm />
+                    </Modal.Description>
+                </Modal.Content>
+            </Modal>
+        );
+    }
+}
+
+export default connect(null, actions)(LoginModal);
+=====
+s_11.3.4
+=====
+import React, {Component} from 'react';
+import {Modal} from 'semantic-ui-react';
+import {connect} from 'react-redux';
+
+import {closeModal} from "features/modals/modalActions";
+import RegisterForm from "features/auth/Register/RegisterForm";
+
+const actions = {closeModal};
+
+class RegisterModal extends Component {
+    render() {
+        return (
+            <Modal
+                size='mini'
+                open={true}
+                onClose={this.props.closeModal}
+            >
+                <Modal.Header>
+                    Sign Up to Re-vents!
+                </Modal.Header>
+                <Modal.Content>
+                    <Modal.Description>
+                        <RegisterForm />
+                    </Modal.Description>
+                </Modal.Content>
+            </Modal>
+        );
+    }
+}
+
+export default connect(null, actions)(RegisterModal);
+=====
+s_15.5.1
+=====
+        <div>
+          <Button type="button" style={{ marginBottom: '10px' }} fluid color="facebook">
+            <Icon name="facebook" /> Login with Facebook
+          </Button>
+    
+          <Button type="button" fluid color="google plus">
+            <Icon name="google plus" />
+            Login with Google
+          </Button>
+        </div>
+=====
+15.9.1
+=====
+import React from 'react';
+import { Segment, Header, Form, Divider, Label, Button, Icon } from 'semantic-ui-react';
+import { Field, reduxForm } from 'redux-form';
+import TextInput from '../../../app/common/form/TextInput';
+
+const Account = ({ error }) => {
+  return (
+    <Segment>
+      <Header dividing size="large" content="Account" />
+      <div>
+        <Header color="teal" sub content="Change password" />
+        <p>Use this form to update your account settings</p>
+        <Form>
+          <Field
+            width={8}
+            name="newPassword1"
+            type="password"
+            pointing="left"
+            inline={true}
+            component={TextInput}
+            basic={true}
+            placeholder="New Password"
+          />
+          <Field
+            width={8}
+            name="newPassword2"
+            type="password"
+            inline={true}
+            basic={true}
+            pointing="left"
+            component={TextInput}
+            placeholder="Confirm Password"
+          />
+          {error && (
+            <Label basic color="red">
+              {error}
+            </Label>
+          )}
+          <Divider />
+          <Button size="large" positive content="Update Password" />
+        </Form>
+      </div>
+
+      <div>
+        <Header color="teal" sub content="Facebook Account" />
+        <p>Please visit Facebook to update your account settings</p>
+        <Button type="button" color="facebook">
+          <Icon name="facebook" />
+          Go to Facebook
+        </Button>
+      </div>
+
+      <div>
+        <Header color="teal" sub content="Google Account" />
+        <p>Please visit Google to update your account settings</p>
+        <Button type="button" color="google plus">
+          <Icon name="google plus" />
+          Go to Google
+        </Button>
+      </div>
+    </Segment>
+  );
+};
+
+export default reduxForm({ form: 'account' })(Account);
+=====
+16.2.1
+=====
+import React, {Component} from 'react';
+import {Segment, Form, Header, Divider, Button} from 'semantic-ui-react';
+import {Field, reduxForm} from 'redux-form';
+import DateInput from "../../../app/common/form/DateInput";
+import PlaceInput from "../../../app/common/form/PlaceInput";
+import TextInput from "../../../app/common/form/TextInput";
+
+class Basics extends Component {
+
+    render() {
+        const {pristine, submitting} = this.props;
+        return (
+            <Segment>
+                <Header dividing size='large' content='Basics' />
+                <Form>
+                    <Field
+                        width={8}
+                        name='displayName'
+                        type='text'
+                        component={TextInput}
+                        placeholder='Known As'
+                    />
+                    <Form.Group inline>
+                      {/* todo: Gender Radio button */}
+                    </Form.Group>
+                    <Field
+                        width={8}
+                        name='dateOfBirth'
+                        component={DateInput}
+                        placeholder='Date of Birth'
+                    />
+                    <Field
+                        name='city'
+                        placeholder='Home Town'
+                        options={{types: ['(cities)']}}
+                        label='Female'
+                        component={PlaceInput}
+                        width={8}
+                    />
+                    <Divider/>
+                    <Button disabled={pristine || submitting} size='large' positive content='Update Profile'/>
+                </Form>
+            </Segment>
+        );
+    }
+}
+
+export default reduxForm({form: 'userProfile'})(Basics);
+=====
+s_16.4.1
+=====
+import React from 'react';
+import { Button, Divider, Form, Header, Segment } from 'semantic-ui-react';
+import { Field, reduxForm } from 'redux-form';
+import RadioInput from '../../../app/common/form/RadioInput';
+import TextInput from '../../../app/common/form/TextInput';
+import TextArea from '../../../app/common/form/TextArea';
+import PlaceInput from '../../../app/common/form/PlaceInput';
+import SelectInput from '../../../app/common/form/SelectInput';
+
+const interests = [
+  { key: 'drinks', text: 'Drinks', value: 'drinks' },
+  { key: 'culture', text: 'Culture', value: 'culture' },
+  { key: 'film', text: 'Film', value: 'film' },
+  { key: 'food', text: 'Food', value: 'food' },
+  { key: 'music', text: 'Music', value: 'music' },
+  { key: 'travel', text: 'Travel', value: 'travel' }
+];
+
+const About = ({ pristine, submitting }) => {
+  return (
+    <Segment>
+      <Header dividing size="large" content="About Me" />
+      <p>Complete your profile to get the most out of this site</p>
+      <Form>
+        <Form.Group inline>
+          <label>Tell us your status: </label>
+          <Field name="status" component={RadioInput} type="radio" value="single" label="Single" />
+          <Field
+            name="status"
+            component={RadioInput}
+            type="radio"
+            value="relationship"
+            label="Relationship"
+          />
+          <Field
+            name="status"
+            component={RadioInput}
+            type="radio"
+            value="married"
+            label="Married"
+          />
+        </Form.Group>
+        <Divider />
+        <label>Tell us about yourself</label>
+        <Field name="about" component={TextArea} placeholder="About Me" />
+        <Field
+          name="interests"
+          component={SelectInput}
+          options={interests}
+          value="interests"
+          multiple={true}
+          placeholder="Select your interests"
+        />
+        <Field
+          width={8}
+          name="occupation"
+          type="text"
+          component={TextInput}
+          placeholder="Occupation"
+        />
+        <Field
+          width={8}
+          name="origin"
+          options={{ types: ['(regions)'] }}
+          component={PlaceInput}
+          placeholder="Country of Origin"
+        />
+        <Divider />
+        <Button disabled={pristine || submitting} size="large" positive content="Update Profile" />
+      </Form>
+    </Segment>
+  );
+};
+
+export default reduxForm({ form: 'userProfile', enableReinitialize: true })(About);
+=====
+s_17.2.1
+=====
+import React, {Component} from 'react';
+import {Image, Segment, Header, Divider, Grid, Button, Card} from 'semantic-ui-react';
+
+class PhotosPage extends Component {
+    render() {
+        return (
+            <Segment>
+                <Header dividing size='large' content='Your Photos' />
+                <Grid>
+                    <Grid.Row />
+                    <Grid.Column width={4}>
+                        <Header color='teal' sub content='Step 1 - Add Photo'/>
+                    </Grid.Column>
+                    <Grid.Column width={1} />
+                    <Grid.Column width={4}>
+                        <Header sub color='teal' content='Step 2 - Resize image' />
+                    </Grid.Column>
+                    <Grid.Column width={1} />
+                    <Grid.Column width={4}>
+                        <Header sub color='teal' content='Step 3 - Preview and Upload' />
+                    </Grid.Column>
+
+                </Grid>
+
+                <Divider/>
+                <Header sub color='teal' content='All Photos'/>
+
+                <Card.Group itemsPerRow={5}>
+                    <Card>
+                        <Image src='https://randomuser.me/api/portraits/men/20.jpg'/>
+                        <Button positive>Main Photo</Button>
+                    </Card>
+
+                        <Card >
+                            <Image
+                                src='https://randomuser.me/api/portraits/men/20.jpg'
+                            />
+                            <div className='ui two buttons'>
+                                <Button basic color='green'>Main</Button>
+                                <Button basic icon='trash' color='red' />
+                            </div>
+                        </Card>
+                </Card.Group>
+            </Segment>
+        );
+    }
+}
+
+export default PhotosPage;
+=====
+s_18.2.1
+=====
+import React, {Component} from 'react';
+import {Button, Card, Grid, Header, Icon, Image, Item, List, Menu, Segment} from "semantic-ui-react";
+
+class UserDetailedPage extends Component {
+
+    render() {
+
+        return (
+            <Grid>
+                <Grid.Column width={16}>
+                    <Segment>
+                        <Item.Group>
+                            <Item>
+                                <Item.Image avatar size='small' src='https://randomuser.me/api/portraits/men/20.jpg'/>
+                                <Item.Content verticalAlign='bottom'>
+                                    <Header as='h1'>First Name</Header>
+                                    <br/>
+                                    <Header as='h3'>Occupation</Header>
+                                    <br/>
+                                    <Header as='h3'>27, Lives in London, UK</Header>
+                                </Item.Content>
+                            </Item>
+                        </Item.Group>
+
+                    </Segment>
+                </Grid.Column>
+                <Grid.Column width={12}>
+                    <Segment>
+                        <Grid columns={2}>
+                            <Grid.Column width={10}>
+                                <Header icon='smile' content='About Display Name'/>
+                                <p>I am a: <strong>Occupation Placeholder</strong></p>
+                                <p>Originally from <strong>United Kingdom</strong></p>
+                                <p>Member Since: <strong>28th March 2018</strong></p>
+                                <p>Description of user</p>
+
+                            </Grid.Column>
+                            <Grid.Column width={6}>
+
+                                <Header icon='heart outline' content='Interests'/>
+                                <List>
+                                    <Item>
+                                        <Icon name='heart'/>
+                                        <Item.Content>Interest 1</Item.Content>
+                                    </Item>
+                                    <Item>
+                                        <Icon name='heart'/>
+                                        <Item.Content>Interest 2</Item.Content>
+                                    </Item>
+                                    <Item>
+                                        <Icon name='heart'/>
+                                        <Item.Content>Interest 3</Item.Content>
+                                    </Item>
+                                </List>
+                            </Grid.Column>
+                        </Grid>
+
+                    </Segment>
+                </Grid.Column>
+                <Grid.Column width={4}>
+                    <Segment>
+                        <Button color='teal' fluid basic content='Edit Profile'/>
+                    </Segment>
+                </Grid.Column>
+
+                <Grid.Column width={12}>
+                    <Segment attached>
+                        <Header icon='image' content='Photos'/>
+                        
+                        <Image.Group size='small'>
+                            <Image src='https://randomuser.me/api/portraits/men/20.jpg'/>
+                            <Image src='https://randomuser.me/api/portraits/men/20.jpg'/>
+                            <Image src='https://randomuser.me/api/portraits/men/20.jpg'/>
+                            <Image src='https://randomuser.me/api/portraits/men/20.jpg'/>
+                        </Image.Group>
+                    </Segment>
+                </Grid.Column>
+
+                <Grid.Column width={12}>
+                    <Segment attached>
+                        <Header icon='calendar' content='Events'/>
+                        <Menu secondary pointing>
+                            <Menu.Item name='All Events' active/>
+                            <Menu.Item name='Past Events'/>
+                            <Menu.Item name='Future Events'/>
+                            <Menu.Item name='Events Hosted'/>
+                        </Menu>
+
+                        <Card.Group itemsPerRow={5}>
+
+                            <Card>
+                                <Image src={'/assets/categoryImages/drinks.jpg'}/>
+                                <Card.Content>
+                                    <Card.Header textAlign='center'>
+                                        Event Title
+                                    </Card.Header>
+                                    <Card.Meta textAlign='center'>
+                                        28th March 2018 at 10:00 PM
+                                    </Card.Meta>
+                                </Card.Content>
+                            </Card>
+
+                            <Card>
+                                <Image src={'/assets/categoryImages/drinks.jpg'}/>
+                                <Card.Content>
+                                    <Card.Header textAlign='center'>
+                                        Event Title
+                                    </Card.Header>
+                                    <Card.Meta textAlign='center'>
+                                        28th March 2018 at 10:00 PM
+                                    </Card.Meta>
+                                </Card.Content>
+                            </Card>
+
+                        </Card.Group>
+                    </Segment>
+                </Grid.Column>
+            </Grid>
+
+        );
+    }
+}
+
+export default UserDetailedPage;
+=====
+s_21.7.1
+=====
+export const createDataTree = dataset => {
+    let hashTable = Object.create(null);
+    dataset.forEach(a => hashTable[a.id] = {...a, childNodes: []});
+    let dataTree = [];
+    dataset.forEach(a => {
+        if (a.parentId) hashTable[a.parentId].childNodes.push(hashTable[a.id]);
+        else dataTree.push(hashTable[a.id])
+    });
+    return dataTree
+};
+=====
+s_22.4.1
+=====
+import React, {Component} from 'react';
+import {Feed} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
+
+class EventActivityItem extends Component {
+
+    renderSummary = (activity) => {
+        switch (activity.type) {
+            case 'newEvent':
+                return (
+                    <div>
+                        New Event! {' '}
+                        <Feed.User as={Link} to={{pathname: '/profile/' + activity.hostUid}}>{activity.hostedBy}</Feed.User> {' '}
+                        is hosting {' '}
+                        <Link to={{pathname: '/event/' + activity.eventId}}>{activity.title}</Link>
+                    </div>
+                );
+            case 'cancelledEvent':
+                return (
+                    <div>
+                        Event Cancelled! {' '}
+                        <Feed.User as={Link} to={{pathname: '/profile/' + activity.hostUid}}>{activity.hostedByDisplayName}</Feed.User> {' '}
+                        has cancelled {' '}
+                        <Link to={{pathname: '/event/' + activity.eventId}}>{activity.title}</Link>
+                    </div>
+                );
+            default:
+                return;
+        }
+    };
+
+    render() {
+        const {activity} = this.props;
+
+        return (
+            <Feed.Event>
+                <Feed.Label>
+                    <img src={activity.photoURL || '/assets/user.png'} alt=''/>
+                </Feed.Label>
+                <Feed.Content>
+                    <Feed.Summary>
+                        {this.renderSummary(activity)}
+                    </Feed.Summary>
+                    <Feed.Meta>
+                        <Feed.Date>{distanceInWordsToNow(activity.timestamp)} ago</Feed.Date>
+                    </Feed.Meta>
+                </Feed.Content>
+            </Feed.Event>
+        );
+    }
+}
+
+export default EventActivityItem;
+=====
+s_23.2.2
+=====
+import React from 'react';
+import {Card, Image} from "semantic-ui-react";
+import {Link} from 'react-router-dom';
+
+const PersonCard = ({user}) => {
+    return (
+        <Card as={Link} to='/profile/12'>
+            <Image src='/assets/user.png' />
+            <Card.Content textAlign='center'>
+                <Card.Header content='Display Name'/>
+            </Card.Content>
+            <Card.Meta textAlign='center'>
+                <span>City</span>
+            </Card.Meta>
+        </Card>
+    );
+};
+
+export default PersonCard;
+=====
+s_23.2.1
+=====
+import React from 'react';
+import { Grid, Segment, Header, Card } from 'semantic-ui-react';
+import PersonCard from './PersonCard';
+
+const PeopleDashboard = () => {
+  return (
+    <Grid>
+      <Grid.Column width={16}>
+        <Segment>
+          <Header dividing content="People following me" />
+          <Card.Group itemsPerRow={8} stackable>
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+          </Card.Group>
+        </Segment>
+        <Segment>
+          <Header dividing content="People I'm following" />
+          <Card.Group itemsPerRow={8} stackable>
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+          </Card.Group>
+        </Segment>
+      </Grid.Column>
+    </Grid>
+  );
+};
+
+export default PeopleDashboard;
+=====
+s_25.4.1
+=====
+import React, {Component} from 'react';
+import {Modal, Button, Divider} from 'semantic-ui-react';
+import {connect} from 'react-redux';
+
+import {closeModal, openModal} from "features/modals/modalActions";
+
+const actions = {closeModal, openModal};
+
+class UnauthModal extends Component {
+    render() {
+        const {openModal, closeModal} = this.props;
+        return (
+            <Modal
+                size='mini'
+                open={true}
+                onClose={closeModal}
+            >
+                <Modal.Header>
+                    You need to be signed in to do that!
+                </Modal.Header>
+                <Modal.Content>
+                    <Modal.Description>
+                        <p>Please either login or register to see this page</p>
+                        <Button.Group widths={4}>
+                            <Button fluid color='teal' onClick={() => openModal("LoginModal")}>Login</Button>
+                            <Button.Or />
+                            <Button fluid positive onClick={() => openModal("RegisterModal")}>Register</Button>
+                        </Button.Group>
+                        <Divider/>
+                        <div style={{textAlign: 'center'}}>
+                            <p>Or click cancel to continue as a guest</p>
+                            <Button onClick={closeModal}>Cancel</Button>
+                        </div>
+                    </Modal.Description>
+                </Modal.Content>
+            </Modal>
+        );
+    }
+}
+
+export default connect(null, actions)(UnauthModal);
