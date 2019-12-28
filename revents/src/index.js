@@ -7,10 +7,12 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "./app/store/configureStore";
 import ScrollToTop from "./app/common/util/ScrollToTop.jsx";
+import { loadEvents } from "./freatures/event/eventActions";
 
 // ReactDOM.render(<App />, document.getElementById("root"));
 
 const store = configureStore();
+store.dispatch(loadEvents());
 const rootEL = document.getElementById("root");
 
 let render = () => {
