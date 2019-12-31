@@ -5,7 +5,7 @@ import SettingsNav from "./SettingsNav";
 import { Route, Redirect, Switch } from "react-router-dom";
 import BasicPage from "./BasicPage";
 import AboutPage from "./AboutPage";
-import PhotoPage from "./PhotoPage";
+import PhotosPage from "./Photos/PhotosPage";
 import AccountPage from "./AccountPage";
 import { updatePassword } from "../../auth/authActions";
 import { updateProfile } from "../../user/userActions";
@@ -43,7 +43,7 @@ const SettingsDashboard = ({
               <AboutPage initialValues={user} updateProfile={updateProfile} />
             )}
           />
-          <Route path='/settings/photos' component={PhotoPage} />
+          <Route path='/settings/photos' component={PhotosPage} />
           <Route
             path='/settings/account'
             render={() => (
