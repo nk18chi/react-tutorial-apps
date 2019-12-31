@@ -9,7 +9,7 @@ import cuid from "cuid";
 import TextInput from "../../../app/common/form/TextInput";
 import TextArea from "../../../app/common/form/TextArea";
 import SelectInput from "../../../app/common/form/SelectInput";
-import DataInput from "../../../app/common/form/DataInput";
+import DateInput from "../../../app/common/form/DateInput";
 import {
   combineValidators,
   composeValidators,
@@ -168,7 +168,7 @@ class EventForm extends Component {
             />
             <Field
               name='date'
-              component={DataInput}
+              component={DateInput}
               dateFormat='dd LLL yyyy h:mm a'
               showTimeSelect
               timeFormat='HH:mm'

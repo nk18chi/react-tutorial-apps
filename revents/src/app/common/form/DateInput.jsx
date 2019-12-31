@@ -3,8 +3,8 @@ import { Form, Label } from "semantic-ui-react";
 import DataPicler from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const DataInput = ({
-  input,
+const DateInput = ({
+  input: { value, onChange, onBlur },
   width,
   placeholder,
   meta: { touched, error },
@@ -15,9 +15,15 @@ const DataInput = ({
       <DataPicler
         {...rest}
         placeholderText={placeholder}
-        selected={input.value ? new Date(input.value) : null}
-        onChange={input.onChange}
-        onBlur={input.onBlur}
+        selected={
+          value
+            ? Object.prototype.toString.call(value) !== "[object Date]"
+              ? value.toDate()
+              : value
+            : null
+        }
+        onChange={onChange}
+        onBlur={(e, val) => onBlur(val)}
         onChangeRaw={e => e.preventDefault()}
       />
       {touched && error && (
@@ -29,4 +35,4 @@ const DataInput = ({
   );
 };
 
-export default DataInput;
+export default DateInput;
