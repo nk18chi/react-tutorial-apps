@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import { reducer as FormReducer } from "redux-form";
 import { reducer as ToastrReducer } from "react-redux-toastr";
-import testReducer from "../../freatures/testarea/testReducer";
-import eventReducer from "../../freatures/event/eventReducer";
-import modalReducer from "../../freatures/modals/modalReducer";
-import authReducer from "../../freatures/auth/authReducer";
-import asyncReducer from "../../freatures/async/asyncReducer";
+import testReducer from "../../features/testarea/testReducer";
+import eventReducer from "../../features/event/eventReducer";
+import modalReducer from "../../features/modals/modalReducer";
+import authReducer from "../../features/auth/authReducer";
+import asyncReducer from "../../features/async/asyncReducer";
 import { firebaseReducer } from "react-redux-firebase";
 import { firestoreReducer } from "redux-firestore";
 
