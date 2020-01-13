@@ -6,7 +6,7 @@ import {
 } from "../async/asyncActions";
 import cuid from "cuid";
 import firebase from "../../app/config/firebase";
-import { FETCH_EVENTS } from "../event/eventConstants";
+import { FETCH_USER_EVENTS } from "../event/eventConstants";
 
 export const updateProfile = user => async (
   dispatch,
@@ -121,7 +121,6 @@ export const setMainPhoto = photo => async (dispatch, getState) => {
         });
       }
     }
-    console.log(batch);
     await batch.commit();
     dispatch(asyncActionFinish());
   } catch (error) {
@@ -237,7 +236,7 @@ export const getUserEvents = (userUid, activeTab) => async (
       events.push({ ...evt.data(), id: evt.id });
     }
 
-    dispatch({ type: FETCH_EVENTS, payload: { events } });
+    dispatch({ type: FETCH_USER_EVENTS, payload: { events } });
     dispatch(asyncActionFinish());
   } catch (error) {
     console.log(error);

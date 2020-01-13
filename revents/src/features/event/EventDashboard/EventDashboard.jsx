@@ -16,7 +16,7 @@ const query = [
 ];
 
 const mapState = state => ({
-  events: state.events,
+  events: state.events.events,
   loading: state.async.loading,
   activities: state.firestore.ordered.activity
 });
