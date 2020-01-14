@@ -69,3 +69,53 @@ exports.cancelActivity = functions.firestore
         return console.log("Error adding activity", err);
       });
   });
+
+exports.userFollowing = functions.firestore
+  .document("users/{followerUid}/following/{followingUid}")
+  .onCreate((event, context) => {
+    const followerUid = context.params.followerUid;
+    const followingUid = context.params.followingUid;
+    const followerDoc = admin
+      .firestore()
+      .collection("users")
+      .doc(followerUid);
+
+    console.log(followerDoc);
+
+    return followerDoc.get().then(doc => {
+      let userData = doc.data();
+      let follower = {
+        photoURL: userData.photoURL || "/assets/user.png",
+        displayName: userData.displayName,
+        city: userData.city || "unKnown city"
+      };
+
+      return admin
+        .firestore()
+        .collection("users")
+        .doc(followingUid)
+        .collection("followers")
+        .doc(followerUid)
+        .set(follower);
+    });
+  });
+
+exports.userUnfollowing = functions.firestore
+  .document("users/{followerUid}/following/{followingUid}")
+  .onDelete((event, context) => {
+    const followerUid = context.params.followerUid;
+    const followingUid = context.params.followingUid;
+    return admin
+      .firestore()
+      .collection("users")
+      .doc(followingUid)
+      .collection("followers")
+      .doc(followerUid)
+      .delete()
+      .then(() => {
+        return console.log("doc delete");
+      })
+      .catch(err => {
+        return console.log(err);
+      });
+  });

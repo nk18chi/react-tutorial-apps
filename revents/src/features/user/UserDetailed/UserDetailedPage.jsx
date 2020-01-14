@@ -10,7 +10,7 @@ import UserDetailedSidebar from "./UserDetailedSidebar";
 import UserDetailedEvents from "./UserDetailedEvents";
 import { userDetailedQuery } from "../userQueries";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
-import { getUserEvents, followUser } from "../userActions";
+import { getUserEvents, followUser, unfollowUser } from "../userActions";
 
 const mapState = (state, ownProps) => {
   let userUid = null;
@@ -26,6 +26,7 @@ const mapState = (state, ownProps) => {
   return {
     profile,
     userUid,
+    following: state.firestore.ordered.following,
     events: state.events.userEvents,
     eventsLoading: state.async.loading,
     auth: state.firebase.auth,
@@ -36,7 +37,8 @@ const mapState = (state, ownProps) => {
 
 const actions = {
   getUserEvents,
-  followUser
+  followUser,
+  unfollowUser
 };
 
 class UserDetailedPage extends Component {
@@ -57,9 +59,12 @@ class UserDetailedPage extends Component {
       requesting,
       events,
       eventsLoading,
-      followUser
+      followUser,
+      unfollowUser,
+      following
     } = this.props;
     const isCurrentUser = auth.uid === match.params.id;
+    const isFollowed = !isEmpty(following);
     const loading = Object.values(requesting).some(a => a === true);
     if (loading) return <LoadingComponent />;
 
@@ -69,8 +74,10 @@ class UserDetailedPage extends Component {
         <UserDetailedDescription profile={profile} />
         <UserDetailedSidebar
           followUser={followUser}
+          unfollowUser={unfollowUser}
           profile={profile}
           isCurrentUser={isCurrentUser}
+          isFollowed={isFollowed}
         />
         {photos && photos.length > 0 && (
           <UserDetailedPhotos profile={profile} photos={photos} />
@@ -87,5 +94,7 @@ class UserDetailedPage extends Component {
 
 export default compose(
   connect(mapState, actions),
-  firestoreConnect((auth, userUid) => userDetailedQuery(auth, userUid))
+  firestoreConnect((auth, userUid, match) =>
+    userDetailedQuery(auth, userUid, match)
+  )
 )(UserDetailedPage);
